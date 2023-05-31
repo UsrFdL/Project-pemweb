@@ -4,10 +4,10 @@
 
     if (isset($_SESSION['admin'])) {
         if ($_SESSION['admin']) {
-            header('Location: manajer.php');
+            header('Location: admin.php');
         }
         else {
-            header('Location: karyawan.php');
+            header('Location: employee.php');
         }
     }
 ?>

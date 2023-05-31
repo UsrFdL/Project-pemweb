@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: clip;
+}
+
+a,
+button {
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  font-family: "Open Sans", sans-serif;
+}
+main #banner nav {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+main #banner nav a {
+  text-decoration: none;
+  color: white;
+}
+main #banner nav button {
+  border: none;
+  padding: 10px 20px;
+  margin-left: 20px;
+  background-color: white;
+}
+main #banner img {
+  height: 100vh;
+}
+main #main {
+  padding: 20px;
+  background-color: #f6f6f6;
+  height: 100vh;
+  overflow: scroll;
+  padding-bottom: 50px;
+}
+main #main nav {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+main #main nav #nama_divisi {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+main #main nav #nama_lengkap {
+  opacity: 0.7;
+}
+main #main hr {
+  margin: 20px 0;
+}
+main #main #subjek {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-content: center;
+}
+main #main #subjek .card {
+  background-color: white;
+  padding: 20px;
+}
+main #main #subjek #isi_subjek .hapusBtn {
+  position: relative;
+  float: right;
+  background: #dddd;
+}
+main #main #subjek #isi_subjek .hapusBtn:hover {
+  background: #333;
+  color: #dddd;
+}
+main #main #subjek .card #judul_subjek {
+  font-size: 18px;
+  font-weight: 600;
+}
+main #main #tambah_subjek {
+  padding-bottom: 50px;
+}
+main #main #tambah_subjek label {
+  display: block;
+}
+main #main #tambah_subjek form {
+  margin: 0 auto;
+}
+main #main #tambah_subjek form > * {
+  margin-bottom: 10px;
+}
+main #main #tambah_subjek form label {
+  font-weight: 600;
+}
+main #main #tambah_subjek form input,
+main #main #tambah_subjek form textarea {
+  border: 1px solid #b0b0b0;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px;
+  width: calc(100% - 20px);
+}
+main #main #tambah_subjek form button {
+  display: block;
+  margin: 0 auto;
+  background-color: rgb(55, 186, 55);
+  color: #f6f6f6;
+}

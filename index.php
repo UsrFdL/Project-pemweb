@@ -1,3 +1,15 @@
+<?php 
+    include "function.php";
+    session_start();
+
+    if (isset($_POST['keluar'])) {
+        endSession();
+    }
+
+    if (isset($_POST['masuk'])) {
+        header('Location: login.php');
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +23,17 @@
     <header>
         <div class="topnav">
             <a href="index.php" class="profil">FGR Innovations</a>
-            <a href="login.php" class="login">Masuk</a>
+            <form method="post">
+                <?php 
+                if (isset($_SESSION['nama'])) {
+                    echo "<a href='login.php' class='profil'>$_SESSION[nama]</a>";
+                    echo "<input type='submit' value='Keluar' name='keluar' id='keluar'>";
+                }
+                else {
+                    echo "<input type='submit' value='Masuk' name='masuk' id='masuk'>";
+                }
+                ?>
+            </form>
         </div>
     </header>
     <section>

@@ -15,40 +15,63 @@ body {
     background-image: url("https://media.discordapp.net/attachments/1038329663187062804/1112517232384286831/Designer_41.png");
     background-size: cover;
     background-repeat: no-repeat;
-    /* background-position: center; */
 }
 
 .topnav {
     position: absolute;
     width: 100%;
     background-color: #333;
-    overflow: hidden;
+    overflow-x: auto;
     display: flex;
     align-content: flex-start;
     justify-content:space-between;
     z-index: 1;
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: left;
-    color: #f2f2f2;
+.topnav .kiri {
+    display: flex;
+}
+
+.topnav .kiri a {
     text-align: center;
+    float: left;
     padding: 16px;
+    color: #f2f2f2;
     text-decoration: none;
     font-size: 20px;
 }
 
-/* Change the color of links on hover */
-.topnav a.login:hover {
-    background-color: #ddd;
-    color: black;
+.topnav .kanan {
+    position: relative;
+    display: flex;
 }
 
-/* Add a color to the active/current link */
-.topnav a.login {
+.topnav p {
+    font-size: 20px;
+    float: left;
+    text-align: center;
+    padding: 16px;
+    color:#f2f2f2;
+}
+
+.topnav form {
+    display: flex;
+}
+
+.topnav .keluarBtn {
+    padding: 16px;
+    border: none;
+    font-size: 20px;
+}
+
+.topnav #keluar {
     background-color: #04AA6D;
-    color: white;
+    color: #f2f2f2;
+}
+
+.topnav #keluar:hover {
+    background-color: #f2f2f2;
+    color: #333;
 }
 
 section {
@@ -61,7 +84,7 @@ section {
     /* overflow-x: hidden; */
 }
 
-.login {
+.inputPost {
     position: relative;
     padding: 60px;
     background: rgba(10, 10, 10, 0.25);
@@ -70,15 +93,14 @@ section {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     border-right: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    width: 500px;
+    width: 750px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
 }
 
-.login h2 {
-    position:relative;
-    width: 100%;
+.inputPost h2 {
+    /* width: 100%; */
     text-align: center;
     font-size: 2.5em;
     font-weight: 600;
@@ -87,19 +109,12 @@ section {
     background: none;
 }
 
-
-.login p {
-    background: none;
-    text-align: center;
-    color: rgb(241, 65, 65);
-    font-size: large;
-}
-
-.login .inputBox {
+.inputPost .inputBox {
     background: none;
     position: relative;
 }
-.login .inputBox input {
+
+.inputPost .inputBox input, textarea {
     background: #fff;
     position: relative;
     width: 100%;
@@ -112,12 +127,48 @@ section {
     margin-bottom: 30px;
 }
 
-.login .inputBox .loginBtn:hover {
-    background-color: #333;
-    color: #fff;
+.inputPost .inputBox #subjek2 {
+    border: solid;
+    border-color: red;
 }
 
-.login .inputBox .loginBtn {
-    background: #04AA6D;
-    color: white;
+.inputPost .inputBox #subjek2:focus {
+    border: none;
+}
+
+.inputPost .inputBox #subjek2:not(:placeholder-shown) {
+    border: none;
+}
+
+.inputPost .inputBox #isi {
+    height: 200px;
+    resize: none;
+
+}
+.inputPost .inputBox #isi2 {
+    height: 200px;
+    resize: none;
+    border: solid;
+    border-color: red;
+}
+
+.inputPost .inputBox #isi2:focus {
+    border: none;
+}
+
+.inputPost .inputBox #isi2:not(:placeholder-shown) {
+    border: none;
+}
+
+.inputPost .inputBox #kirim {
+    position: relative;
+    width: 25%;
+    left: 75%;
+    background-color: #04AA6D;
+    color: #f2f2f2;
+}
+
+.inputPost .inputBox #kirim:hover {
+    background-color: #f2f2f2;
+    color: #333;
 }
