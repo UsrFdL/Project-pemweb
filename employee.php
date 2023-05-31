@@ -2,8 +2,16 @@
 	include "function.php";
 	session_start();
 
+	if (!isset($_SESSION['nama'])) {
+        header('Location: login.php');
+    }
+	
 	if (isset($_POST['keluar'])) {
         endSession();
+    }
+
+	if (isset($_POST['hapus'])) {
+        hapus($_POST);
     }
 ?>
 
