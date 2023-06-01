@@ -20,55 +20,86 @@
     <title>Account</title>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Username</th>
-            <th>Admin</th>
-            <th>Nama</th>
-            <th>Divisi</th>
-            <th>Action</th>
-        </tr>
-    <?php 
-    $sql = "SELECT * FROM user";
-    $prepared = $db->prepare($sql);
-    $prepared->execute();
-    $rows = $prepared->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($rows as $row) {
-    echo"<tr>
-            <form method='post'>
-                <td>$row[id]</td>
-                <td>$row[username]</td>
-                <td>$row[admin]</td>
-                <td>$row[nama]</td>
-                <td>$row[divisi]</td>
-                <td><button id='Hapus' type='submit' value='$row[id]' name='hapus'>Delete</button></td>
+    <header>
+        <div class="topnav">
+            <div class="kiri">
+                <a href="index.php" class="profil">Home</a>
+                <a href="admin.php">Buat Post</a>
+                <a href="employee.php">Postingan</a>
+                <a href="account.php">Account</a>
+            </div>
+            <p><?php echo $_SESSION["divisi"] ?></p>
+            <div class="kanan">
+                <?php echo "<p>$_SESSION[nama]</p>" ?>
+                <form action="" method="post"><input class="keluarBtn" type="submit" value="Keluar" name="keluar" id="keluar"></form>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="tabel">
+            <form method="post" id='atas'>
+                <input type="text" name="keyword" id="kotak" autofocus placeholder="Cari" autocomplete="off">
+                <button type="submit" name="cari" id="tombol">Cari</button>
             </form>
-        </tr>";
-    }
-    $db = null;
-    ?>
-    
-    </table>
-    <form action="" method="post"><button type="submit" id="buatAkun" name='buatAkun'>Buat akun</button></form>
-    <?php 
-    if (isset($_POST['buatAkun'])) {
-        unset($_POST['close']);
-    echo"<form action='' method='post'>
-            <input type='text' placeholder='Nama' name='nama'>
-            <select type='text' placeholder='Divisi' name='divisi'>
-                <option value='Manajer'>Manajer</option>
-                <option value='Human Resource'>Human Resource</option>
-                <option value='Product Management'>Product Management</option>
-                <option value='Marketing'>Marketing</option>
-            </select>
-            <input type='text' placeholder='Username' name='username'>
-            <input type='password' placeholder='Password' name='password'>
-            <input type='password' placeholder='Konfirmasi Password' name='password2'>
-            <input class='daftarBtn' type='submit' value='Daftar' name='daftar'>
-            <input class='Close' type='submit' value='X' name='close'>
-        </form>";
-    }
-    ?>
+            <div id="area">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Username</th>
+                            <th>Admin</th>
+                            <th>Nama</th>
+                            <th>Divisi</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                        $sql = "SELECT * FROM user";
+                        $prepared = $db->prepare($sql);
+                        $prepared->execute();
+                        $rows = $prepared->fetchAll(PDO::FETCH_ASSOC);
+                        if (isset($_POST['cari'])) $rows = cari($_POST['keyword']);
+                        foreach ($rows as $row) {
+                        echo"<tr id='isi'>
+                                <form method='post'>
+                                    <td>$row[id]</td>
+                                    <td>$row[username]</td>
+                                    <td>$row[admin]</td>
+                                    <td>$row[nama]</td>
+                                    <td>$row[divisi]</td>
+                                    <td><button id='hapus' type='submit' value='$row[id]' name='hapus'>Delete</button></td>
+                                </form>
+                            </tr>";
+                        }
+                        $db = null;
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+            <form action="" method="post"><button type="submit" id="buatAkun" name='buatAkun'>Buat akun</button></form>
+        </section>
+        <?php 
+        if (isset($_POST['buatAkun'])) {
+            unset($_POST['close']);
+            echo"<section id='buat'>
+                <form action='' method='post'>
+                        <input type='text' placeholder='Nama' name='nama'>
+                        <select type='text' placeholder='Divisi' name='divisi'>
+                            <option value='Manajer'>Manajer</option>
+                            <option value='Human Resource'>Human Resource</option>
+                            <option value='Product Management'>Product Management</option>
+                            <option value='Marketing'>Marketing</option>
+                        </select>
+                        <input type='text' placeholder='Username' name='username'>
+                        <input type='password' placeholder='Password' name='password'>
+                        <input type='password' placeholder='Konfirmasi Password' name='password2'>
+                        <input class='daftarBtn' type='submit' value='Daftar' name='daftar'>
+                        <input class='close' type='submit' value='X' name='close'>
+                    </form>;
+                </section>";
+            }
+        ?>
+    </main>
 </body>
 </html>

@@ -73,6 +73,13 @@
         
     }
 
+    function cari($keyword) {
+        global $db;
+        $stmt = $db->prepare('SELECT * FROM user WHERE username LIKE :keyword');
+        $stmt->execute([':keyword' => "%$keyword%"]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     function hapus($data, $ini) {
         global $db;
         $hapus = "DELETE FROM $ini WHERE id=$data[hapus]";

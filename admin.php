@@ -30,6 +30,7 @@
         <div class="topnav">
             <div class="kiri">
                 <a href="index.php" class="profil">Home</a>
+                <a href="admin.php">Buat Post</a>
                 <a href="employee.php">Postingan</a>
                 <a href="account.php">Account</a>
             </div>
