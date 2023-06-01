@@ -30,8 +30,8 @@
         <div class="topnav">
             <div class="kiri">
                 <a href="index.php" class="profil">Home</a>
-                <a href="indexx.php">Postingan</a>
-                <a href="#">Account</a>
+                <a href="employee.php">Postingan</a>
+                <a href="account.php">Account</a>
             </div>
             <p><?php echo $_SESSION["divisi"] ?></p>
             <div class="kanan">

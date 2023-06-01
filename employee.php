@@ -11,7 +11,7 @@
     }
 
 	if (isset($_POST['hapus'])) {
-        hapus($_POST);
+        hapus($_POST, "post");
     }
 ?>
 
@@ -37,8 +37,8 @@
 			<section id="subjek">
 				<?php
 					$sql = "SELECT * FROM post";
-					$result = $conn->query($sql);
-					while($row = $result->fetch_array()){
+					$result = $db->query($sql);
+					while($row = $result->fetch()){
 						echo "<div class='card'>";
 							echo "<span id='judul_subjek'>$row[subjek]</span>";
 							echo "<hr/>";
@@ -52,7 +52,7 @@
 							echo "</span>";
 						echo "</div>";
 					}
-					$conn->close();
+					$db = null;
 				?>
 			</section>
 		</section>
