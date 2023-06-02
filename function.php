@@ -14,7 +14,7 @@
             $prepared->execute();
             $db = null;
         }
-    } 
+    }
 
     function login($data) {
         global $db;
@@ -87,6 +87,16 @@
         $prepared->execute();
     }
 
+    function kirimLink($data) {
+        global $db;
+        if (empty($data['link'])) /* echo "<p>Username atau Password tidak boleh kosong</p>" */;
+        else {
+            $update = "UPDATE post SET link = '$data[link]' WHERE id = :id";
+            $prepared = $db->prepare($update);
+            $prepared->execute(['id' => $data['kirim']]);
+        }
+    }
+
     function endSession() {
         session_start();
         session_destroy();
@@ -94,12 +104,4 @@
         header("Location: index.php");
     }
 
-    // function login($data) {
-    //     global $conn;
-    //     $username = stripslashes($data["username"]);
-    //     $password = mysqli_real_escape_string($conn, $data["password"]);
-    //     $usrnm = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
-    //     if ($password === $usrnm["password"]) {
-    //         echo "<script>console.log('benar')</script>";
-    //     };
-    // }
+?>

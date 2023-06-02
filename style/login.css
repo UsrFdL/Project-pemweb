@@ -12,7 +12,8 @@ html {
 body {
     width: 100%;
     margin: 0 auto;
-    background-image: url("https://media.discordapp.net/attachments/1038329663187062804/1112517232384286831/Designer_41.png");
+    background-color: #c0c0c0;
+    /* background-image: url("https://media.discordapp.net/attachments/1038329663187062804/1112517232384286831/Designer_41.png"); */
     background-size: cover;
     background-repeat: no-repeat;
     /* background-position: center; */
@@ -120,4 +121,5 @@ section {
 .login .inputBox .loginBtn {
     background: #04AA6D;
     color: white;
+    cursor: pointer;
 }

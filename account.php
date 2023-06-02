@@ -2,6 +2,8 @@
     include 'function.php';
     session_start();
 
+    if (!isset($_SESSION['nama']) || !$_SESSION['admin']) header('Location: login.php');
+
     if (isset($_POST['close'])) unset($_POST['buatAkun']);
 
     if (isset($_POST['daftar'])) daftar($_POST);
@@ -26,9 +28,9 @@
                 <a href="index.php" class="profil">Home</a>
                 <a href="admin.php">Buat Post</a>
                 <a href="employee.php">Postingan</a>
-                <a href="account.php">Account</a>
+                <a href="account.php" id="acc">Account</a>
             </div>
-            <p><?php echo $_SESSION["divisi"] ?></p>
+            <div class="tengah"><p><?php echo $_SESSION["divisi"] ?></p></div>
             <div class="kanan">
                 <?php echo "<p>$_SESSION[nama]</p>" ?>
                 <form action="" method="post"><input class="keluarBtn" type="submit" value="Keluar" name="keluar" id="keluar"></form>
@@ -39,17 +41,17 @@
         <section id="tabel">
             <form method="post" id='atas'>
                 <input type="text" name="keyword" id="kotak" autofocus placeholder="Cari" autocomplete="off">
-                <button type="submit" name="cari" id="tombol">Cari</button>
+                <button type="submit" name="cari" id="cari">Cari</button>
             </form>
             <div id="area">
                 <table>
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Username</th>
-                            <th>Admin</th>
                             <th>Nama</th>
                             <th>Divisi</th>
+                            <th>Username</th>
+                            <th>Admin</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -64,10 +66,10 @@
                         echo"<tr id='isi'>
                                 <form method='post'>
                                     <td>$row[id]</td>
-                                    <td>$row[username]</td>
-                                    <td>$row[admin]</td>
                                     <td>$row[nama]</td>
                                     <td>$row[divisi]</td>
+                                    <td>$row[username]</td>
+                                    <td>$row[admin]</td>
                                     <td><button id='hapus' type='submit' value='$row[id]' name='hapus'>Delete</button></td>
                                 </form>
                             </tr>";

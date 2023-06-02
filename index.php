@@ -22,11 +22,11 @@
 <body>
     <header>
         <div class="topnav">
-            <a href="index.php" class="profil">FGR Innovations</a>
+            <a href="login.php" class="profil">FGR Innovations</a>
             <form method="post">
                 <?php 
                 if (isset($_SESSION['nama'])) {
-                    echo "<a href='login.php' class='profil'>$_SESSION[nama]</a>";
+                    echo "<a class='profil'>$_SESSION[nama]</a>";
                     echo "<input type='submit' value='Keluar' name='keluar' id='keluar'>";
                 }
                 else {

@@ -1,14 +1,10 @@
 <?php 
     include 'function.php';
-
     session_start();
-    if (!isset($_SESSION['nama']) || !$_SESSION['admin']) {
-        header('Location: login.php');
-    }
 
-    if (isset($_POST['keluar'])) {
-        endSession();
-    }
+    if (!isset($_SESSION['nama']) || !$_SESSION['admin']) header('Location: login.php');
+
+    if (isset($_POST['keluar'])) endSession();
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +26,11 @@
         <div class="topnav">
             <div class="kiri">
                 <a href="index.php" class="profil">Home</a>
-                <a href="admin.php">Buat Post</a>
+                <a href="admin.php" id="buat">Buat Post</a>
                 <a href="employee.php">Postingan</a>
                 <a href="account.php">Account</a>
             </div>
-            <p><?php echo $_SESSION["divisi"] ?></p>
+            <div class="tengah"><p class="mclass"><?php echo $_SESSION["divisi"] ?></p></div>
             <div class="kanan">
                 <?php echo "<p>$_SESSION[nama]</p>" ?>
                 <form action="" method="post"><input class="keluarBtn" type="submit" value="Keluar" name="keluar" id="keluar"></form>
@@ -48,7 +44,6 @@
                 <form action="" method="post">
                     <input class="inputBox" <?php echo (isset($_POST["kirim"]) && empty($_POST["isi"])) ? "id='subjek2'" : "id='subjek'" ?> type="text" placeholder="Subjek" name="subjek">
                     <textarea name="isi" <?php echo (isset($_POST["kirim"]) && empty($_POST["isi"])) ? "id='isi2'" : "id='isi'" ?> placeholder="Isi"></textarea>
-                    <!-- <input class="inputBox" type="text" placeholder="Isi" name="isi" id="isi"> -->
                     <input class="kirimBtn" type="submit" value="Kirim" name="kirim" id="kirim">
                     <?php if (isset($_POST['kirim'])) kirim($_POST); ?>
                 </form>

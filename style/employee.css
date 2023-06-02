@@ -9,11 +9,11 @@ body {
 }
 
 a,
-button {
+button, input {
   font-size: 16px;
 }
 
-button {
+button{
   border: none;
   padding: 10px 20px;
 }
@@ -71,46 +71,38 @@ main #main #subjek {
 main #main #subjek .card {
   background-color: white;
   padding: 20px;
-}
-main #main #subjek #isi_subjek .hapusBtn {
-  position: relative;
-  float: right;
-  background: #dddd;
-}
-main #main #subjek #isi_subjek .hapusBtn:hover {
-  background: #333;
-  color: #dddd;
+  width: 475px;
 }
 main #main #subjek .card #judul_subjek {
   font-size: 18px;
   font-weight: 600;
 }
-main #main #tambah_subjek {
-  padding-bottom: 50px;
+main #main #subjek form {
+  display: flex;
 }
-main #main #tambah_subjek label {
-  display: block;
+main #main #subjek .card form input {
+  padding: 10px 20px;
 }
-main #main #tambah_subjek form {
-  margin: 0 auto;
+main #main #subjek .card form .btn button {
+  background: #dddd;
 }
-main #main #tambah_subjek form > * {
-  margin-bottom: 10px;
+main #main #subjek .card form .btn button:hover {
+  background: #333;
+  color: #dddd;
 }
-main #main #tambah_subjek form label {
-  font-weight: 600;
+main #main #subjek .card .teks {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 350px;
 }
-main #main #tambah_subjek form input,
-main #main #tambah_subjek form textarea {
-  border: 1px solid #b0b0b0;
-  border-radius: 5px;
-  font-size: 16px;
-  padding: 5px;
-  width: calc(100% - 20px);
+main #main #subjek .card .inp {
+  display: flex;
+  align-items: center;
+  width: 60%;
 }
-main #main #tambah_subjek form button {
-  display: block;
-  margin: 0 auto;
-  background-color: rgb(55, 186, 55);
-  color: #f6f6f6;
+main #main #subjek .card .btn {
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
 }
