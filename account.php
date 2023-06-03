@@ -9,6 +9,8 @@
     if (isset($_POST['daftar'])) daftar($_POST);
 
     if (isset($_POST['hapus'])) hapus($_POST, "user");
+
+    if (isset($_POST['keluar'])) endSession();
 ?>
 
 <!DOCTYPE html>

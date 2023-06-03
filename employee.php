@@ -72,7 +72,7 @@
 					<form action="" method="post">
 						<?php if ($_SESSION["admin"]) echo "<a href='admin.php'>Portal Admin | </a>" ?>
 						<a href="index.php">Home</a>
-						<button type="submit" name="keluar">Keluar</button>
+						<button class="keluarBtn" type="submit" name="keluar">Keluar</button>
 					</form>
 				</div>
 			</nav>

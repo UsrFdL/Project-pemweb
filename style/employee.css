@@ -1,108 +1,110 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  overflow: clip;
+    overflow: clip;
 }
 
 a,
-button, input {
-  font-size: 16px;
+button,
+input {
+    font-size: 16px;
 }
 
-button{
-  border: none;
-  padding: 10px 20px;
+button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 main {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  font-family: "Open Sans", sans-serif;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    font-family: "Open Sans", sans-serif;
 }
 main #banner nav {
-  position: fixed;
-  top: 30px;
-  right: 30px;
+    position: fixed;
+    top: 30px;
+    right: 30px;
 }
 main #banner nav a {
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
 }
 main #banner nav button {
-  border: none;
-  padding: 10px 20px;
-  margin-left: 20px;
-  background-color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    background-color: white;
 }
 main #banner img {
-  height: 100vh;
+    height: 100vh;
 }
 main #main {
-  padding: 20px;
-  background-color: #f6f6f6;
-  height: 100vh;
-  overflow: scroll;
-  padding-bottom: 50px;
+    padding: 20px;
+    background-color: #f6f6f6;
+    height: 100vh;
+    overflow: scroll;
+    padding-bottom: 50px;
 }
 main #main nav {
-  display: grid;
-  grid-template-rows: auto auto;
+    display: grid;
+    grid-template-rows: auto auto;
 }
 main #main nav #nama_divisi {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 5px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 main #main nav #nama_lengkap {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 main #main hr {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 main #main #subjek {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  align-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-content: center;
 }
 main #main #subjek .card {
-  background-color: white;
-  padding: 20px;
-  width: 475px;
+    background-color: white;
+    padding: 20px;
+    width: 475px;
 }
 main #main #subjek .card #judul_subjek {
-  font-size: 18px;
-  font-weight: 600;
+    font-size: 18px;
+    font-weight: 600;
 }
 main #main #subjek form {
-  display: flex;
+    display: flex;
 }
 main #main #subjek .card form input {
-  padding: 10px 20px;
+    padding: 10px 20px;
 }
 main #main #subjek .card form .btn button {
-  background: #dddd;
+    background: #dddd;
 }
 main #main #subjek .card form .btn button:hover {
-  background: #333;
-  color: #dddd;
+    background: #333;
+    color: #dddd;
 }
 main #main #subjek .card .teks {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
 }
 main #main #subjek .card .inp {
-  display: flex;
-  align-items: center;
-  width: 60%;
+    display: flex;
+    align-items: center;
+    width: 60%;
 }
 main #main #subjek .card .btn {
-  display: flex;
-  width: 40%;
-  justify-content: flex-end;
+    display: flex;
+    width: 40%;
+    justify-content: flex-end;
 }
